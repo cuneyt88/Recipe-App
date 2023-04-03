@@ -11,6 +11,7 @@ export const GlobalStyles = createGlobalStyle`
     
     body{
         font-size:2rem;
+        background:${({theme})=>theme.colors.mainColor}
     }
 
 `
