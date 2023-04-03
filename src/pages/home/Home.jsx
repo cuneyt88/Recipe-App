@@ -1,13 +1,15 @@
 import axios from 'axios';
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Header from '../../components/header/Header';
 import Cards from "../../components/cards/Cards"
 import {HeaderText, HomeImg,ImgDiv} from "./Home.style"
 import homeSvg from "../../assets/home.svg"
 
 const Home = () => {
-  const APP_ID="2e7f5050";
-  const APP_KEY="929bfcb1a3746349f7d1c6e5726433d0";
+  const APP_ID=process.env.REACT_APP_ID
+  const APP_KEY=process.env.REACT_APP_KEY
+
+
   const [query,setQuery]=useState("egg");
   const [selectedMeal,setSelectedMeal]=useState("breakfast");
   const [recipes,setRecipes]=useState("")
@@ -29,10 +31,6 @@ const Home = () => {
       
   }
   console.log(recipes)
-
-  // useEffect(() => {
-  //   getData()
-  // }, [])
   
 
   return (
